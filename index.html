@@ -95,34 +95,6 @@
                </aside>
             </section>
             <section>
-                <h2>Keyboard Shortcuts</h2>
-                <table>
-                    <tr>
-                      <td><b>Full Screen</b></td>
-                      <td>F</td>
-                    </tr>
-                    <tr>
-                      <td><b>Next Slide</b></td>
-                      <td>Space bar</td>
-                    </tr>
-                    <tr>
-                      <td><b>Slide Notes</b></td>
-                      <td>S</td>
-                    </tr>
-                    <tr>
-                      <td><b>Thumbnail View</b></td>
-                      <td>Esc</td>
-                    </tr>
-                </table>
-                <p><small>View online at <a href="https://github.com/candysmurf/GoSliceTalk">https://github.com/candysmurf/GoSliceTalk </a></small><br/>
-                <small><i><b>Note:</b> Some slides move down instead of to the side, so use the space bar to advance slides.</i></small></p>
-              
-                <aside class="notes">
-                <p>This is the speaker notes view.</p>
-                <p>Notice the navigation arrows in the lower corner.</p>
-                </aside>
-            </section> 
-            <section>
               <h2>Me</h2>
               <h3 class="fragment">Learn Go Slice Length and Cap</h3>
                 <p align="left">
@@ -136,9 +108,9 @@
                </p>
             </section>
             <section>
-               <h2>Problem</h2>
+               <h2>Have you ever done this?</h2>
                <section>
-                <h3>Have you ever done this?</h3>
+                <h3>Append to a pre-allocated slice</h3>
                 <pre><code>
 
                 s := make([]int, 10)
@@ -155,7 +127,7 @@
 
                 </code></pre>
                 <p class="fragment" style="color:red; font-size: 1.8em;">
-                    Is it expected?
+                    Is this what you expected?
                 </p>
                 <aside class="notes">
                 </aside>
@@ -180,7 +152,7 @@
                <h2>Length vs Capacity</h2>
                <h3 class="fragment">Slice grows and shrinks</h3>
                <ul>
-                   <li>Slice is accessible from 0 to len(s)-1</li>
+                   <li>Slice is accessible from index 0 to len(s)-1</li>
                    <li>Slice s[x:y] is sliceable if x <= y <= cap(s)</li>
                    <li>Slice is always appendable</li>
                </ul>
@@ -223,10 +195,10 @@
               <h3>Go Slice</h3>
                <ul>
                  <li>len(s) <= cap(s)</li>
-                 <li>access slice from 0 to len(s)-1</li>
-                 <li>slice s[x:y] where x <= y <= cap(s)</li>
-                 <li>append increases length 1 by 1</li>
-                 <li>append doubles cap after initial cap</li>
+                 <li>access slice from index 0 to len(s)-1</li>
+                 <li>slice s[x:y] if x <= y <= cap(s)</li>
+                 <li>append doubles capacity when the capacity is exceeded</li>
+                 <li>define length and capacity when you know the data size</li>
                  <li class="fragment highlight-blue">learn Go slice by contributing to Snap!</li>
                </ul>
                <blockquote>
