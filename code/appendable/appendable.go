@@ -10,10 +10,15 @@ import (
 
 func main() {
 	var s []int
-	fmt.Printf("Slice:%v\t\t\tLen:%d\t\tCap:%d\n", s, len(s), cap(s))
+	fmt.Printf("Slice:%v\t\t\t\tLen:%d\t\tCap:%d\n", s, len(s), cap(s))
 
+	// append items one by one
 	for i := 0; i < 10; i++ {
 		s = append(s, i)
 	}
+	fmt.Printf("Slice:%v\t\tLen:%d\t\tCap:%d\n", s, len(s), cap(s))
+
+	ss := []int{10, 20, 30}
+	s = append(s, ss...)
 	fmt.Printf("Slice:%v\tLen:%d\t\tCap:%d\n", s, len(s), cap(s))
 }

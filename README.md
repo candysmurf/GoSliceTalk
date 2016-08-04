@@ -4,8 +4,8 @@ Slice is a dynamic array which grows or shrinks in size.
 
 ## Links
 
-https://blog.golang.org/slices
-https://blog.golang.org/go-slices-usage-and-internals
+https://blog.golang.org/slices  
+https://blog.golang.org/go-slices-usage-and-internals  
 https://www.goinggo.net/2013/08/understanding-slices-in-go-programming.html
 
 
@@ -26,7 +26,7 @@ Example shows that slicing s[x:y] has to have indexes in the range of x <= y <= 
 [Sliceable](code/sliceable/sliceable.go) ([Go Playground](https://play.golang.org/p/_z-XSU9oEq))  
 
 Example shows append works for unknown length data.  
-[Appendable](code/appendable/appendable.go) ([Go Playground](https://play.golang.org/p/GC951VMF7U))  
+[Appendable](code/appendable/appendable.go) ([Go Playground](https://play.golang.org/p/wRV3ac6tRr))  
 
 Example shows that the initial cap allocation varies based on the data type. Afterwards it doubles.  
 [CapInitialGrow](code/interface/slice/slice.go) ([Go Playground](https://play.golang.org/p/GWYFCHCZdj))  
