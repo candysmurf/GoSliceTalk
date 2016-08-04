@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>The Power and Elegance of Reflection</title>
+      <meta name="description" content="GopherCon 2016">
+      <meta name="author" content="Emily Gu">
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+      <!-- favicon icons -->
+      <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+      <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+      <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+      <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+      <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+      <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+      <link rel="icon" type="image/png" sizes="192x192"  href="favicon/android-icon-192x192.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+      <link rel="manifest" href="favicon/manifest.json">
+      <meta name="msapplication-TileColor" content="#ffffff">
+      <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+      <meta name="theme-color" content="#ffffff">
+      <!-- end favicon code -->
+      <link rel="stylesheet" href="css/reveal.css">
+      <link rel="stylesheet" href="css/theme/night.css" id="theme">
+      <!-- Code syntax highlighting -->
+      <link rel="stylesheet" href="lib/css/zenburn.css">
+      <!-- Printing and PDF exports -->
+      <script>
+         var link = document.createElement( 'link' );
+         link.rel = 'stylesheet';
+         link.type = 'text/css';
+         link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+         document.getElementsByTagName( 'head' )[0].appendChild( link );
+      });
+      </script>
+      <!--[if lt IE 9]>
+      <script src="lib/js/html5shiv.js"></script>
+      <![endif]-->
+      <!-- these are my custom styles. remember that slide sizes scale, so try to use percentages. -->
+      <style>
+         p.alignLeft {
+         text-align: left;
+         }
+         span.orange, a.orange {
+         color: orange;
+         outline-color: gray;
+         }
+         div.innovation ul li {
+         margin-bottom:12px;
+         }
+         figcaption {
+         font-size:.8em;
+         }
+         p.miscItems {
+         font-size:1.2em;
+         }
+         .slides section h3 {
+         color: orange !important; outline: gray;
+         }
+         .slides img.shortened {
+         max-width: 80%;
+         max-height: 80%;
+         }
+         #upcoming-slide .label {
+         color: #444 !important
+         }
+         ul.credits li {
+         font-size: .6em;
+         }
+      </style>
+      <!-- Note: Make artboard sizes about 775px wide X 445px tall. If the image appears as a vertical navigation, add a class of "shortened" to the image element to reduce its size to 80% -->
+   </head>
+   <body>
+      <div class="reveal innovation">
+         <!-- Any section element inside of this container is displayed as a slide -->
+         <div class="slides">
+            <section>
+               <h1>Go Slice<br/><span class="orange">Length and Capacity</span></h1>
+               <h3><span style="color:black">WWG San Francisco</span></h3>
+               <p>
+                  <small>Created by <a href="https://github.com/candysmurf">Emily Gu</a> / <a href="https://twitter.com/CandySmurfy">@CandySmurfy</a></small>
+               </p>
+               <p><small>https://candysmurf.github.io/GoSliceTalk</small></p>
+               <aside class="notes">
+                  <p>- I'm working at Intel SDI-X group</p>
+                  <p>- My first time in GohpherCon.</p>
+                  <p>- First time giving this presentation</p>
+               </aside>
+            </section>
+            <section>
+                <h2>Keyboard Shortcuts</h2>
+                <table>
+                    <tr>
+                      <td><b>Full Screen</b></td>
+                      <td>F</td>
+                    </tr>
+                    <tr>
+                      <td><b>Next Slide</b></td>
+                      <td>Space bar</td>
+                    </tr>
+                    <tr>
+                      <td><b>Slide Notes</b></td>
+                      <td>S</td>
+                    </tr>
+                    <tr>
+                      <td><b>Thumbnail View</b></td>
+                      <td>Esc</td>
+                    </tr>
+                </table>
+                <p><small>View online at <a href="https://github.com/candysmurf/GoSliceTalk">https://github.com/candysmurf/GoSliceTalk </a></small><br/>
+                <small><i><b>Note:</b> Some slides move down instead of to the side, so use the space bar to advance slides.</i></small></p>
+              
+                <aside class="notes">
+                <p>This is the speaker notes view.</p>
+                <p>Notice the navigation arrows in the lower corner.</p>
+                </aside>
+            </section> 
+            <section>
+              <h2>Me</h2>
+              <h3 class="fragment">Learn Go Slice Length and Cap</h3>
+                <p align="left">
+                 I currently work for Intel Corporation as a cloud software engineer in the Software Defined Infrastructure (SDI-X) Emerging Tech group.
+                </p>
+               <p style="color:#1b91ff">
+                 I learned Go from William Kennedy at WWG San Francisco. His "mechanical sympathy" truly inspired me.
+               </p>
+               <p align="right" style="color:gray">
+                 Prior to Go, I used Java, Spring Framework, RabbitMQ, Cassandra, Logstash, Elasticsearch...and worked on ECommerce, Big Data and Analytics.
+               </p>
+            </section>
+            <section>
+               <h2>Problem</h2>
+               <section>
+                <h3>Have you ever done this?</h3>
+                <pre><code>
+
+                s := make([]int, 10)
+
+                for i := 0; i < 10;  i++ {
+                  s = append(s, i)
+                }
+
+                </code></pre>
+                <h3 class="fragment">Let's <a target="blank" href="https://play.golang.org/p/N--hzBDMtI">run</a> it!</h3>
+                <pre class="fragment"><code>
+
+               Slice:[0 0 0 0 0 0 0 0 0 0 0 1 2 3 4 5 6 7 8 9]    Len:20,   Cap:20
+
+                </code></pre>
+                <p class="fragment" style="color:red; font-size: 1.8em;">
+                    Is it expected?
+                </p>
+                <aside class="notes">
+                </aside>
+               </section>
+            </section>
+            <section>
+               <h2>Slice Initial Length and Cap</h2>
+               <h3>declaration or make</h3>
+               <pre><code>
+
+                    var s []T
+                    s := []T{}
+                    s := []T{x,y,z}
+
+                    s := make([]T, len)
+                    s := make([]T, len, cap)
+
+                </code></pre>
+                <a target="blank" href="https://play.golang.org/p/fhHed9UBwL"><img src="media/gophers/19.png"  height="200px" width="350px"/></a>
+            </section>
+            <section>
+               <h2>Length vs Capacity</h2>
+               <h3 class="fragment">Slice grows and shrinks</h3>
+               <ul>
+                   <li>Slice is accessible from 0 to len(s)-1</li>
+                   <li>Slice s[x:y] is sliceable if x <= y <= cap(s)</li>
+                   <li>Slice is always appendable</li>
+               </ul>
+               <br/>
+               <a target="blank" href="https://github.com/candysmurf/GoSliceTalk"><img src="media/gophers/19.png"  height="200px" width="350px"/></a>
+               <aside class="notes">
+               </aside>
+            </section>
+            <section>
+               <h2>Initial Capacity Increase</h2>
+               <h3 class="fragment">varies by type</h3>
+               <table>
+                  <tr><td>bool</td><td>8</td></tr>
+                  <tr><td>byte</td><td>8</td></tr>
+                  <tr><td>int</td><td>2</td></tr>
+                  <tr><td>string</td><td>1</td></tr>
+                  <tr><td>float32</td><td>2</td></tr>
+                  <tr><td>float64</td><td>1</td></tr>
+               </table>
+               <a target="blank" href="https://play.golang.org/p/Wk-uTVejAG"><img src="media/gophers/19.png"  height="200px" width="350px"/></a>
+               <aside class="notes">
+               </aside>
+            </section> 
+            <section>
+                <h2>Why capacity</h2>
+                <section>
+                    <h3>doubles</h3>
+                    <ul>
+                      <li>Insertion is O(n) when capacity doubles</li>
+                      <li>Insertion is O(n^2) when capacity increases linearly</li>
+                    </ul>
+                    <br/><br/>
+                    <img src="media/gophers/21.png"  height="200px" width="350px"/>
+                    <aside class="notes">
+                    </aside>
+                </section>
+            </section>
+            <section>
+              <h2>The End</h2>
+              <h3>Go Slice</h3>
+               <ul>
+                 <li>len(s) <= cap(s)</li>
+                 <li>access slice from 0 to len(s)-1</li>
+                 <li>slice s[x:y] where x <= y <= cap(s)</li>
+                 <li>append increases length 1 by 1</li>
+                 <li>append doubles cap after initial cap</li>
+                 <li class="fragment highlight-blue">learn Go slice by contributing to Snap!</li>
+               </ul>
+               <blockquote>
+                  go get github.com/intelsdi-x/snap
+               </blockquote>
+               <aside class="notes">
+                  <p>- </p>
+               </aside>
+            </section>
+            <section>
+               <h1>Thanks!</h1>
+               <section>
+                  <h3>Contact info</h3>
+                  <ul>
+                     <li>Twitter: <a class="orange" href="https://twitter.com/CandySmurfy">@CandySmurfy</a></li>
+                     <li>GitHub: <a class="orange" href="https://github.com/candysmurf/GoSliceTalk">github.com/candysmurf/GoSliceTalk</a></li>
+                     <li>Email: <a class="orange" href="mailto:77.ears@gmail.com">77.ears@gmail.com</a></li>
+                  </ul>
+               </section>
+               <section>
+                  <h3>Acknowledgement</h3>
+                  <ul>
+                     <li>William Kennedy @goinggodotnet</li>
+                     <li>reveal.js template</li>
+                  </ul>
+               </section>
+            </section>
+         </div>
+      </div>
+      <script src="lib/js/head.min.js"></script>
+      <script src="js/reveal.js"></script>
+      <script>
+         // Full list of configuration options available at:
+         // https://github.com/hakimel/reveal.js#configuration
+         Reveal.initialize({
+          controls: true,
+          progress: true,
+          history: true,
+          center: false,
+          slideNumber: true, 
+         
+         
+          transition: 'slide', // none/fade/slide/convex/concave/zoom
+         
+          // Optional reveal.js plugins
+          dependencies: [
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: 'plugin/zoom-js/zoom.js', async: true },
+            { src: 'plugin/notes/notes.js', async: true }
+          ]
+         });
+         
+      </script>
+   </body>
+</html>
