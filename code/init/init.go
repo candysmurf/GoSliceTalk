@@ -1,7 +1,7 @@
 // All material is licensed under the Apache License Version 2.0, August 2016
 // http://www.apache.org/licenses/LICENSE-2.0
 
-// Example shows slice len and cap at initial states.
+// Example shows slice's length and capacity at its declared state.
 package main
 
 import (

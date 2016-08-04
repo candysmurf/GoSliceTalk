@@ -1,8 +1,7 @@
 // All material is licensed under the Apache License Version 2.0, August 2016
 // http://www.apache.org/licenses/LICENSE-2.0
 
-// Example shows that appending the value to the end of a slice instead
-// of initialized slice slots.
+// Example shows that appending items to the pre-allocated slice.
 package main
 
 import (
